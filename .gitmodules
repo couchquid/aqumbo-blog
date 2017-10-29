@@ -1,0 +1,3 @@
+[submodule "themes/stickig"]
+	path = themes/stickig
+	url = https://github.com/couchquid/stickig
