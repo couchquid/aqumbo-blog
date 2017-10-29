@@ -4,4 +4,11 @@ title = "About"
 menu = "main"
 +++
 
-About Page
+#### Ways to contact me
+<i class="fa fa-envelope"></i> [alex@aqumbo.se](mailto:alex@aqumbo.se)
+
+<i class="fa fa-reddit"></i> [@couchquid](https://www.reddit.com/u/couchquid)
+
+<i class="fa fa-github"></i> [Github](https://www.github.com/couchquid)
+
+<i class="fa fa-terminal"></i> couchquid @ Freenode
