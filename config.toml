@@ -44,3 +44,4 @@ theme = "stickig"
 [social]
     github   = "https://www.github.com/couchquid"
     gitlab   = "https://www.gitlab.com/couchquid"
+    envelope = "mailto:alex@aqumbo.se"
