@@ -28,13 +28,13 @@ Update the system.
 
 Create a user for yourself.
 
-```shell
+```javascript
 # adduser username
 ```
 
 Give your new user root privileges.
 
-```
+```sh
 # usermod -aG sudo username
 ```
 
