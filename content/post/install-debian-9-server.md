@@ -22,19 +22,19 @@ Accept the warning about host authenticity.
 
 Update the system.
 
-```
+```text
 # apt update && apt upgrade
 ```
 
 Create a user for yourself.
 
-```
+```text
 # adduser username
 ```
 
 Give your new user root privileges.
 
-```
+```text
 # usermod -aG sudo username
 ```
 
