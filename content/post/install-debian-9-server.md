@@ -22,7 +22,7 @@ Accept the warning about host authenticity.
 
 Update the system.
 
-```
+```javascript
 # apt update && apt upgrade
 ```
 
@@ -34,7 +34,7 @@ Create a user for yourself.
 
 Give your new user root privileges.
 
-```bash
+```javascript
 # usermod -aG sudo username
 ```
 
@@ -74,7 +74,7 @@ $ chmod 600 ~/.ssh/authorized_keys
 ```
 Edit the SSH daemons settings.
 
-```
+```javascript
 # nano /etc/ssh/sshd_config
 ```
 Don't accept remote root login and require a key.
@@ -86,7 +86,7 @@ PubkeyAuthentication yes
 ```
 Restart SSH.
 
-```
+```javascript
 # systemctl restart ssh
 ```
 #### UFW Firewall
