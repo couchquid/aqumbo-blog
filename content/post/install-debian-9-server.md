@@ -26,9 +26,7 @@ Update the system.
 
 Create a user for yourself.
 
-```
-# adduser username
-```
+    # adduser username
 
 Give your new user root privileges.
 
