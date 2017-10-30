@@ -22,7 +22,7 @@ Accept the warning about host authenticity.
 
 Update the system.
 
-```javascript
+```
 # apt update && apt upgrade
 ```
 
@@ -34,7 +34,7 @@ Create a user for yourself.
 
 Give your new user root privileges.
 
-```sh
+```bash
 # usermod -aG sudo username
 ```
 
