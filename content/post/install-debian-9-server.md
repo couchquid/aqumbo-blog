@@ -18,7 +18,7 @@ $ ssh root@YOUR_SERVER_IP_ADDRESS
 
 Accept the warning about host authenticity.
 
-### First order of business
+#### First order of business
 
 Update the system.
 
@@ -45,68 +45,86 @@ To generate a new key, enter this on your local system.
 ```
 $ ssh-keygen
 ```
+Print out your key and copy it.
 
 ```
 $ cat ~/.ssh/id_rsa.pub
 ```
 
+Switch to your user.
+
 ```
 $ su - username
 ```
+Create the .ssh directory.
 
 ```
 $ mkdir ~/.ssh/
 $ chmod 700 ~/.ssh/
 ```
+Insert your public key using nano.
 
 ```
 $ nano ~/.ssh/authorized_keys
 ```
-Insert your public key here.
+Change permissions.
 
 ```
 $ chmod 600 ~/.ssh/authorized_keys
 ```
+Edit the SSH daemons settings.
 
 ```
 # nano /etc/ssh/sshd_config
 ```
+Don't accept remote root login and require a key.
 
 /etc/ssh/sshd_config
 ```
 PermitRootLogin no
 PubkeyAuthentication yes
 ```
+Restart SSH.
 
 ```
 # systemctl restart ssh
 ```
+#### UFW Firewall
+
+Install UFW to edit your firewall.
 
 ```
 $ sudo apt install ufw
 ```
+Deny all incoming and allow all outgoing.
 
 ```
 $ sudo ufw default deny incoming
 $ sudo ufw default allow outgoing
 ```
+Allow SSH.
 
 ```
 $ sudo ufw allow 22
 ```
+Allow HTTP
 
 ```
 $ sudo ufw allow 80
 ```
+Allow HTTPS
 
 ```
 $ sudo ufw allow 443
 ```
+Turn on the firewall.
 
 ```
 $ sudo ufw enable
 ```
+#### Docker
 
+Install the Docker repository.
 ```
 $ sudo apt install \
     apt-transport-https \
@@ -130,20 +148,24 @@ $ sudo add-apt-repository \
 ```
 $ sudo apt update
 ```
+Install Docker
 
 ```
 $ sudo apt install docker-ce
 ```
+To be able to use docker without being root, add yourself to the docker group.
 
 ```
 $ sudo usermod -aG docker $USER
 ```
+Enable Docker at boot.
 
 ```
 $ sudo systemctl enable docker
 ```
 
-Logout
+Logout and login again.
+Then try if Docker work.
 
 ```
 $ docker run hello-world
