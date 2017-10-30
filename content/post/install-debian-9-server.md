@@ -55,8 +55,8 @@ $ su - username
 ```
 
 ```
-$ mkdir ~/.ssh
-$ chmod 700 ~/.ssh
+$ mkdir ~/.ssh/
+$ chmod 700 ~/.ssh/
 ```
 
 ```
