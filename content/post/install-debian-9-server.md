@@ -4,7 +4,7 @@ title = "Install a Debian 9 server with Docker"
 type = "post"
 +++
 
-#### Introduction
+### Introduction
 
 You need a server, here are some recommendations:
 
@@ -38,7 +38,7 @@ Give your new user root privileges.
 # usermod -aG sudo username
 ```
 
-#### Generate SSH key
+#### SSH key
 
 To generate a new key, enter this on your local system.
 
@@ -72,24 +72,29 @@ Change permissions.
 ```
 $ chmod 600 ~/.ssh/authorized_keys
 ```
+
+#### SSH daemon
+
 Edit the SSH daemons settings.
 
 ```javascript
 # nano /etc/ssh/sshd_config
 ```
-Don't accept remote root login and require a key.
+Don't accept remote root login, change port, disable passwords & limit LoginGraceTime.
 
 /etc/ssh/sshd_config
 ```
 PermitRootLogin no
-PubkeyAuthentication yes
+Port 22221
+PasswordAuthentication no
+LoginGraceTime 20
 ```
 Restart SSH.
 
 ```javascript
 # systemctl restart ssh
 ```
-#### UFW Firewall
+### UFW Firewall
 
 Install UFW to edit your firewall.
 
@@ -105,7 +110,7 @@ $ sudo ufw default allow outgoing
 Allow SSH.
 
 ```
-$ sudo ufw allow 22
+$ sudo ufw allow 22221
 ```
 Allow HTTP
 
@@ -117,12 +122,18 @@ Allow HTTPS
 ```
 $ sudo ufw allow 443
 ```
+Limit connection attempts to SSH
+
+```
+$ sudo ufw limit 22221
+```
+
 Turn on the firewall.
 
 ```
 $ sudo ufw enable
 ```
-#### Docker
+### Docker
 
 Install the Docker repository.
 ```
@@ -165,6 +176,15 @@ $ sudo systemctl enable docker
 ```
 
 Logout and login again.
+
+```
+$ exit
+```
+
+```
+$ ssh username@serverip -p 22221
+```
+
 Then try if Docker work.
 
 ```
