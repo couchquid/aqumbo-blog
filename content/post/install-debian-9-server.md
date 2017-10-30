@@ -22,11 +22,15 @@ Accept the warning about host authenticity.
 
 Update the system.
 
-    # apt update && apt upgrade
+```javascript
+# apt update && apt upgrade
+```
 
 Create a user for yourself.
 
-    # adduser username
+```shell
+# adduser username
+```
 
 Give your new user root privileges.
 
