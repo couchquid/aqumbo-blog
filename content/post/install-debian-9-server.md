@@ -1,6 +1,7 @@
 +++
 date = "2017-10-30T10:18:21+02:00"
 title = "Install a Debian 9 server with Docker"
+type = "post"
 +++
 
 #### Introduction
